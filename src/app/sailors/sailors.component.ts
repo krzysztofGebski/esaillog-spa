@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { SailorsService } from './sailors.service';
+import { Sailor } from './models/sailor';
 
 @Component({
   selector: 'app-sailors',
@@ -11,4 +13,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './sailors.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SailorsComponent { }
+export class SailorsComponent implements OnInit{
+
+  sailors: Sailor[] = [];
+
+  constructor(private sailorsService: SailorsService) { }
+
+  ngOnInit(): void {
+    this.sailorsService.getSailors().subscribe(sailors => {
+      this.sailors = sailors;
+    });
+  }
+}
