@@ -1,0 +1,7 @@
+<ul>
+  @for (sailor of sailors; track sailor.id) {
+    <li>{{ sailor.firstName }}</li>
+  } @empty {
+    <li>No sailors found</li>
+  }
+  </ul>

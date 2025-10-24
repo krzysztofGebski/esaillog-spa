@@ -1,0 +1,12 @@
+<div>
+  <h2>List of sailors</h2>
+  @if (error) {
+    {{error}}
+  }
+  @if (sailors$ | async; as sailors) {
+    <eslg-sailors-list [sailors]="sailors"></eslg-sailors-list>
+  }
+  @else {
+    <p>Loading...</p>
+  }
+</div>
