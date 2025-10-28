@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Sailor } from '../../models/sailor.model';
+import { SailorResponse } from '../../models/sailor.model';
 
 @Component({
   selector: 'eslg-sailors-list',
@@ -10,5 +10,5 @@ import { Sailor } from '../../models/sailor.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SailorsList {
-  @Input() sailors: Sailor[] = [];
+  @Input() sailors: SailorResponse[] = [];
 }

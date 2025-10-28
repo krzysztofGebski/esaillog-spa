@@ -1,16 +1,21 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Sailor } from '../models/sailor.model';
+import { SailorResponse } from '../models/sailor-response';
+import { ENV_CONFIG } from '../../../core/config/environment-config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SailorsService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/api/sailors';
+  private environmentConfig = inject(ENV_CONFIG);
 
-  getSailors(): Observable<Sailor[]> {
-    return this.http.get<Sailor[]>(this.apiUrl);
+  getSailors(): Observable<SailorResponse[]> {
+    return this.http.get<SailorResponse[]>(this.environmentConfig.apiUrl + '/sailors');
+  }
+
+  getSailor(uuid: string): Observable<SailorResponse> {
+    return this.http.get<SailorResponse>(`${this.environmentConfig.apiUrl}/sailors}/${uuid}`);
   }
 }

@@ -1,4 +1,4 @@
-export interface Sailor {
+export interface SailorResponse {
   id: string;
   firstName: string;
   lastName: string;
