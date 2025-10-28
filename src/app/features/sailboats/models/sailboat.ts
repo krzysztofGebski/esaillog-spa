@@ -8,6 +8,6 @@ export interface Sailboat {
   sailboatType: SailboatType;
   lengthInFeet: number;
   engineKW: number;
-  cruises: Cruise[];
+  cruises: Set<Cruise>;
   updatedAt: string;
 }

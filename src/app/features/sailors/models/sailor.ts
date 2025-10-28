@@ -5,7 +5,7 @@ export interface Sailor {
   firstName: string;
   lastName: string;
   email: string;
-  cruises: Cruise[];
-  skipperedCruises: Cruise[];
+  cruises: Set<Cruise>;
+  skipperedCruises: Set<Cruise>;
   updatedAt: string;
 }

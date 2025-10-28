@@ -4,6 +4,6 @@ export interface Port {
   id: string;
   name: string;
   description: string;
-  cruises: Cruise[];
+  cruises: Set<Cruise>;
   updatedAt: string;
 }

@@ -1,16 +1,17 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ENV_CONFIG } from '../../../core/config/environment-config';
-import { SailboatResponse } from '../models/sailboat-response';
+import { Observable } from 'rxjs';
+import { Cruise } from '../models/cruise';
 
 @Injectable({
   providedIn: 'root',
 })
-export class SailboatService {
+export class CruiseService {
   private http = inject(HttpClient);
   private environmentConfig = inject(ENV_CONFIG);
 
-  getSailboats() {
-    return this.http.get<SailboatResponse[]>(this.environmentConfig.apiUrl + '/sailboats');
+  getCruises(): Observable<Cruise[]> {
+    return this.http.get<Cruise[]>(this.environmentConfig.apiUrl + '/cruises');
   }
 }

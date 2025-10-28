@@ -5,10 +5,10 @@ import { Sailboat } from '../../sailboats/models/sailboat';
 export interface Cruise {
   id: string;
   name: string;
-  participants: Sailor[];
+  participants: Set<Sailor>;
   startPort: Port;
   endPort: Port;
-  visitedPorts: Port[];
+  visitedPorts: Set<Port>;
   sailboat: Sailboat;
   skipper: Sailor;
   updatedAt: string;
