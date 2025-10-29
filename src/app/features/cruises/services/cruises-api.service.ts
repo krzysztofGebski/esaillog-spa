@@ -7,7 +7,7 @@ import { Cruise } from '../models/cruise';
 @Injectable({
   providedIn: 'root',
 })
-export class CruiseService {
+export class CruisesApiService {
   private http = inject(HttpClient);
   private environmentConfig = inject(ENV_CONFIG);
 

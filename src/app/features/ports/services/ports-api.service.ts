@@ -7,7 +7,7 @@ import { Port } from '../models/port';
 @Injectable({
   providedIn: 'root',
 })
-export class PortService {
+export class PortsApiService {
   private http = inject(HttpClient);
   private environmentConfig = inject(ENV_CONFIG);
 

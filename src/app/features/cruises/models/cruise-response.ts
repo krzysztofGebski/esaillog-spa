@@ -1,10 +1,10 @@
 export interface CruiseResponse {
   id: string;
   name: string;
-  participantsIds: string[];
+  participantIds: string[];
   startPortId: string;
   endPortId: string;
-  visitedPortsIds: string[];
+  visitedPortIds: string[];
   sailboatId: string;
   skipperId: string;
   updatedAt: string;

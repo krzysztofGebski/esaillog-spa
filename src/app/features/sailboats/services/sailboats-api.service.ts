@@ -6,7 +6,7 @@ import { SailboatResponse } from '../models/sailboat-response';
 @Injectable({
   providedIn: 'root',
 })
-export class SailboatService {
+export class SailboatsApiService {
   private http = inject(HttpClient);
   private environmentConfig = inject(ENV_CONFIG);
 

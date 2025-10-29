@@ -3,7 +3,7 @@ export interface SailorResponse {
   firstName: string;
   lastName: string;
   email: string;
-  cruisesIds: string[];
-  skipperedCruisesIds: string[];
+  cruiseIds: string[];
+  skipperedCruiseIds: string[];
   updatedAt: string;
 }

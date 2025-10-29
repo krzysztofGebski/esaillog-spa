@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { SailorsService } from '../../services/sailors.service';
+import { SailorsApiService } from '../../services/sailors-api.service';
 import { catchError, Observable, of } from 'rxjs';
 import { SailorsList } from '../../components/sailors-list/sailors-list';
 import { AsyncPipe } from '@angular/common';
@@ -16,7 +16,7 @@ export class SailorsContainer implements OnInit {
   sailors$: Observable<SailorResponse[]> = of([]);
   error: string | null = null;
 
-  private sailorsService = inject(SailorsService);
+  private sailorsService = inject(SailorsApiService);
 
   ngOnInit(): void {
     this.getSailorsList();

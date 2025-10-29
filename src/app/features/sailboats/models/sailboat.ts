@@ -1,13 +1,14 @@
-import { SailboatType } from './sailboat-type';
-import { Cruise } from '../../cruises/models/cruise';
+export const SAILBOATS_TYPES = ['SLOOP', 'KETCH', 'CATAMARAN'] as const;
+
+export type SailboatType = (typeof SAILBOATS_TYPES)[number];
 
 export interface Sailboat {
   id: string;
   name: string;
   registerNumber: string;
-  sailboatType: SailboatType;
+  type: SailboatType;
   lengthInFeet: number;
   engineKW: number;
-  cruises: Set<Cruise>;
-  updatedAt: string;
+  cruiseIds: string[];
+  updatedAt: Date;
 }
